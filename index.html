@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMRAN | Cyber Developer Portfolio</title>
+<title>EMRAN | Cyber Developer Universe</title>
 
 <style>
+
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -19,7 +21,7 @@ body{
   overflow-x:hidden;
 }
 
-/* BACKGROUND MATRIX */
+/* MATRIX BACKGROUND */
 canvas{
   position:fixed;
   top:0;
@@ -29,13 +31,13 @@ canvas{
 
 /* HEADER */
 header{
-  padding:20px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #00ffcc;
+  padding:20px;
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
+  border-bottom:1px solid #00ffcc;
+  position:sticky;
+  top:0;
 }
 
 .logo{
@@ -49,12 +51,9 @@ nav a{
   margin:0 10px;
   color:#00ffcc;
   text-decoration:none;
-  font-size:14px;
+  font-size:13px;
 }
-
-nav a:hover{
-  color:#ff00ff;
-}
+nav a:hover{color:#ff00ff}
 
 /* HERO */
 .hero{
@@ -63,20 +62,19 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:50px;
-  text-shadow:0 0 20px #00ffcc;
+  font-size:55px;
+  text-shadow:0 0 25px #00ffcc;
 }
 
 .hero p{
   color:#aaa;
-  margin-top:10px;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:60px 20px;
 }
 
 /* CARD */
@@ -88,33 +86,19 @@ section{
   border-radius:10px;
   transition:0.3s;
 }
-
 .card:hover{
   transform:scale(1.03);
   box-shadow:0 0 20px #00ffcc;
 }
 
-/* SKILLS */
-.skill{
-  margin:10px 0;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
 
-.bar{
-  height:8px;
-  background:#111;
-  border:1px solid #00ffcc;
-}
-
-.fill{
-  height:100%;
-  background:linear-gradient(90deg,#00ffcc,#ff00ff);
-}
-
-/* PROFILE PHOTO */
-.profile{
-  text-align:center;
-}
-
+/* PROFILE */
 .profile img{
   width:120px;
   height:120px;
@@ -123,13 +107,37 @@ section{
   box-shadow:0 0 20px #00ffcc;
 }
 
+/* SKILL BAR */
+.bar{
+  height:8px;
+  background:#111;
+  border:1px solid #00ffcc;
+}
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#00ffcc,#ff00ff);
+}
+
+/* TIMELINE */
+.timeline{
+  border-left:2px solid #00ffcc;
+  padding-left:20px;
+}
+.timeline div{
+  margin:20px 0;
+}
+
+/* GLOW TEXT */
+.glow{
+  text-shadow:0 0 10px #00ffcc;
+}
+
 /* FOOTER */
 footer{
   text-align:center;
   padding:20px;
   border-top:1px solid #00ffcc;
-  margin-top:30px;
-  color:#888;
+  margin-top:40px;
 }
 
 </style>
@@ -144,6 +152,7 @@ footer{
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#timeline">Journey</a>
     <a href="#projects">Projects</a>
     <a href="#gaming">Gaming</a>
     <a href="#contact">Contact</a>
@@ -151,23 +160,25 @@ footer{
 </header>
 
 <div class="hero">
-  <h1>Hi, I'm EMRAN 👨‍💻</h1>
+  <h1>EMRAN 🚀</h1>
   <p>Cyber Developer | PUBG Player 🎮 | Future Full Stack Engineer</p>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="card profile">
     <img src="YOUR_PHOTO.jpg">
-    <h2>About Me</h2>
+    <h2 class="glow">About Me</h2>
     <p>
-      I am Emran, a passionate learner in web development.  
-      I love building cyber-style websites, playing PUBG, and becoming a full stack developer.
+      I am Emran. I build cyber-style websites, learn coding daily, and improve step by step.
+      I love PUBG, gaming strategy, and becoming a full stack developer.
     </p>
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-  <h2>Skills</h2>
+  <h2>Skills Dashboard</h2>
 
   <div class="card">
     HTML
@@ -183,41 +194,74 @@ footer{
     JavaScript
     <div class="bar"><div class="fill" style="width:70%"></div></div>
   </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="card">Cyber GTA Game (Mini Version)</div>
-  <div class="card">Portfolio Website</div>
-  <div class="card">Future AI Projects (Coming Soon)</div>
-</section>
-
-<section id="gaming">
-  <h2>Gaming 🎮</h2>
 
   <div class="card">
-    PUBG Player 🏆<br>
-    Competitive mindset, strategy, and teamwork.
+    Problem Solving
+    <div class="bar"><div class="fill" style="width:60%"></div></div>
+  </div>
+
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <h2>My Coding Journey</h2>
+
+  <div class="timeline">
+    <div>📌 Started learning HTML</div>
+    <div>📌 Built first website</div>
+    <div>📌 Learned CSS styling</div>
+    <div>📌 Created cyber portfolio</div>
+    <div>📌 Learning JavaScript now</div>
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+    <div class="card">Cyber GTA Game UI</div>
+    <div class="card">Portfolio Website</div>
+    <div class="card">Landing Page Design</div>
+    <div class="card">Future AI Project</div>
+    <div class="card">Gaming Dashboard UI</div>
+    <div class="card">More Coming Soon...</div>
+
+  </div>
+</section>
+
+<!-- GAMING -->
+<section id="gaming">
+  <h2>Gaming Profile 🎮</h2>
+
+  <div class="card">
+    PUBG Player 🏆<br>
+    Rank: Competitive Learner<br>
+    Style: Aggressive + Strategy
+  </div>
+
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
 
   <div class="card">
     Email: emran@example.com<br>
-    GitHub: github.com/emran
+    GitHub: github.com/emran<br>
+    Status: Available for projects 🚀
   </div>
+
 </section>
 
 <footer>
-  Made with 💻 by Emran | Cyber Developer World
+  Made with 💻 by Emran | Cyber Universe Developer
 </footer>
 
 <script>
 
-/* MATRIX BACKGROUND */
+/* MATRIX */
 const c=document.getElementById("matrix");
 const ctx=c.getContext("2d");
 
