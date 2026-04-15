@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CYBER GTA ULTIMATE OFFLINE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMRAN | Cyber Developer Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
 
 body{
   background:#000;
-  overflow:hidden;
   color:#00ffcc;
+  overflow-x:hidden;
 }
 
-/* MATRIX */
+/* BACKGROUND MATRIX */
 canvas{
   position:fixed;
   top:0;
@@ -21,76 +27,109 @@ canvas{
   z-index:-10;
 }
 
-/* GRID CITY */
-.grid{
-  position:fixed;
-  width:4000px;
-  height:4000px;
-  background-image:
-    linear-gradient(rgba(0,255,204,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,204,0.05) 1px, transparent 1px);
-  background-size:50px 50px;
-  z-index:-9;
-}
-
-/* PLAYER */
-.player{
-  width:25px;height:25px;
-  background:#00ffcc;
-  border-radius:50%;
-  position:absolute;
-  box-shadow:0 0 10px #00ffcc;
-}
-
-/* BOTS */
-.bot{
-  width:20px;height:20px;
-  background:red;
-  border-radius:50%;
-  position:absolute;
-}
-
-/* ENEMY */
-.enemy{
-  width:18px;height:18px;
-  background:orange;
-  border-radius:50%;
-  position:absolute;
-}
-
-/* BULLET */
-.bullet{
-  width:6px;height:6px;
-  background:yellow;
-  border-radius:50%;
-  position:absolute;
-}
-
-/* LION */
-#lion{
-  position:fixed;
-  width:120px;height:120px;
-  background:url("https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg");
-  background-size:cover;
-  border-radius:15px;
-  z-index:-8;
-  filter:drop-shadow(0 0 10px orange);
-}
-
-/* HUD */
-#hud{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  padding:10px;
-  background:rgba(0,0,0,0.7);
+/* HEADER */
+header{
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   border-bottom:1px solid #00ffcc;
-  z-index:10;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
 }
 
-.health{
-  color:#ff5555;
+.logo{
+  font-size:20px;
+  font-weight:bold;
+  text-shadow:0 0 10px #00ffcc;
+}
+
+/* NAV */
+nav a{
+  margin:0 10px;
+  color:#00ffcc;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#ff00ff;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1{
+  font-size:50px;
+  text-shadow:0 0 20px #00ffcc;
+}
+
+.hero p{
+  color:#aaa;
+  margin-top:10px;
+}
+
+/* SECTIONS */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(0,255,204,0.05);
+  border:1px solid #00ffcc;
+  padding:20px;
+  margin:15px 0;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 20px #00ffcc;
+}
+
+/* SKILLS */
+.skill{
+  margin:10px 0;
+}
+
+.bar{
+  height:8px;
+  background:#111;
+  border:1px solid #00ffcc;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#00ffcc,#ff00ff);
+}
+
+/* PROFILE PHOTO */
+.profile{
+  text-align:center;
+}
+
+.profile img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:3px solid #00ffcc;
+  box-shadow:0 0 20px #00ffcc;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid #00ffcc;
+  margin-top:30px;
+  color:#888;
 }
 
 </style>
@@ -98,127 +137,87 @@ canvas{
 
 <body>
 
-<div class="grid"></div>
-<div id="lion"></div>
-
-<div id="hud">
-  <div>CYBER GTA ULTIMATE</div>
-  <div class="health">HEALTH: <span id="hp">100</span></div>
-</div>
-
-<div class="world">
-  <div class="player" id="me"></div>
-</div>
-
 <canvas id="matrix"></canvas>
+
+<header>
+  <div class="logo">EMRAN.DEV</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#gaming">Gaming</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Hi, I'm EMRAN 👨‍💻</h1>
+  <p>Cyber Developer | PUBG Player 🎮 | Future Full Stack Engineer</p>
+</div>
+
+<section id="about">
+  <div class="card profile">
+    <img src="YOUR_PHOTO.jpg">
+    <h2>About Me</h2>
+    <p>
+      I am Emran, a passionate learner in web development.  
+      I love building cyber-style websites, playing PUBG, and becoming a full stack developer.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="card">
+    HTML
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+  </div>
+
+  <div class="card">
+    CSS
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="card">
+    JavaScript
+    <div class="bar"><div class="fill" style="width:70%"></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">Cyber GTA Game (Mini Version)</div>
+  <div class="card">Portfolio Website</div>
+  <div class="card">Future AI Projects (Coming Soon)</div>
+</section>
+
+<section id="gaming">
+  <h2>Gaming 🎮</h2>
+
+  <div class="card">
+    PUBG Player 🏆<br>
+    Competitive mindset, strategy, and teamwork.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="card">
+    Email: emran@example.com<br>
+    GitHub: github.com/emran
+  </div>
+</section>
+
+<footer>
+  Made with 💻 by Emran | Cyber Developer World
+</footer>
 
 <script>
 
-/* PLAYER */
-let x=1500,y=1500;
-let hp=100;
-let me=document.getElementById("me");
-let hpText=document.getElementById("hp");
-
-/* MOVE */
-document.addEventListener("keydown",(e)=>{
-  if(e.key==="w") y-=10;
-  if(e.key==="s") y+=10;
-  if(e.key==="a") x-=10;
-  if(e.key==="d") x+=10;
-
-  me.style.left=x+"px";
-  me.style.top=y+"px";
-});
-
-/* SHOOT */
-document.addEventListener("click",(e)=>{
-
-  let b=document.createElement("div");
-  b.className="bullet";
-
-  let bx=x, by=y;
-
-  let dx=e.clientX-window.innerWidth/2;
-  let dy=e.clientY-window.innerHeight/2;
-
-  b.style.left=bx+"px";
-  b.style.top=by+"px";
-  document.body.appendChild(b);
-
-  let move=setInterval(()=>{
-
-    bx+=dx/18;
-    by+=dy/18;
-
-    b.style.left=bx+"px";
-    b.style.top=by+"px";
-
-    document.querySelectorAll(".enemy").forEach(en=>{
-      if(Math.abs(en.offsetLeft-bx)<20 && Math.abs(en.offsetTop-by)<20){
-        en.remove();
-      }
-    });
-
-  },20);
-
-  setTimeout(()=>{b.remove();clearInterval(move);},1500);
-});
-
-/* ENEMIES */
-for(let i=0;i<12;i++){
-  let e=document.createElement("div");
-  e.className="enemy";
-  e.style.left=Math.random()*3000+"px";
-  e.style.top=Math.random()*3000+"px";
-  document.body.appendChild(e);
-}
-
-/* BOT AI */
-for(let i=0;i<6;i++){
-  let b=document.createElement("div");
-  b.className="bot";
-  b.style.left=Math.random()*3000+"px";
-  b.style.top=Math.random()*3000+"px";
-  document.body.appendChild(b);
-
-  setInterval(()=>{
-    b.style.left=parseInt(b.style.left)+Math.random()*20-10+"px";
-    b.style.top=parseInt(b.style.top)+Math.random()*20-10+"px";
-  },200);
-}
-
-/* LION AI */
-let lx=100,ly=200;
-
-function lionAI(){
-  let dx=x-lx;
-  let dy=y-ly;
-  let dist=Math.sqrt(dx*dx+dy*dy);
-
-  if(dist<500){
-    lx+=dx*0.03;
-    ly+=dy*0.03;
-
-    hp-=0.05;
-    hpText.innerText=Math.floor(hp);
-  }else{
-    lx+=Math.sin(Date.now()/500)*2;
-    ly+=Math.cos(Date.now()/500)*2;
-  }
-
-  let lion=document.getElementById("lion");
-  lion.style.left=lx+"px";
-  lion.style.top=ly+"px";
-
-  if(hp<=0){
-    me.style.background="red";
-    me.innerText="💀";
-  }
-}
-setInterval(lionAI,30);
-
-/* MATRIX */
+/* MATRIX BACKGROUND */
 const c=document.getElementById("matrix");
 const ctx=c.getContext("2d");
 
