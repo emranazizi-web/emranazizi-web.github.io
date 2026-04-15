@@ -21,13 +21,13 @@ body{
   overflow-x:hidden;
 }
 
-/* MATRIX BACKGROUND (SLOW + LIGHT) */
+/* MATRIX BACKGROUND */
 canvas{
   position:fixed;
   top:0;
   left:0;
   z-index:-10;
-  opacity:0.25; /* makes everything readable */
+  opacity:0.2;
 }
 
 /* HEADER */
@@ -93,7 +93,6 @@ nav a:hover{color:#ff00ff}
 
 .profile h2{
   margin:10px 0;
-  text-shadow:0 0 10px #00ffcc;
 }
 
 .profile p{
@@ -163,13 +162,14 @@ footer{
 <!-- PROFILE -->
 <section class="profile" id="about">
 
-  <img src="myphoto.jpg" alt="Emran">
+  <!-- YOUR PHOTO -->
+  <img src="myphoto.jpg" alt="My Photo">
 
   <h2>About Me</h2>
 
-  <p>Hello! I am <b>Emran</b>, a passionate future developer 🚀</p>
-  <p>I build cyber-style websites and game UI systems.</p>
-  <p>🎮 PUBG Player | 💻 Coding Learner | 🚀 Future Engineer</p>
+  <p>Hello! I am Emran 🚀</p>
+  <p>I build cyber-style websites and UI projects.</p>
+  <p>🎮 Gamer | 💻 Coder | 🚀 Future Developer</p>
 
 </section>
 
@@ -221,7 +221,7 @@ footer{
 
 <script>
 
-/* SLOW MATRIX (READABLE) */
+/* MATRIX EFFECT */
 const c=document.getElementById("matrix");
 const ctx=c.getContext("2d");
 
@@ -229,7 +229,7 @@ c.width=window.innerWidth;
 c.height=window.innerHeight;
 
 let letters="01";
-let font=16; // slower effect
+let font=16;
 let cols=c.width/font;
 let drops=Array(Math.floor(cols)).fill(1);
 
@@ -249,7 +249,7 @@ function draw(){
   }
 }
 
-setInterval(draw,60); /* slower rain */
+setInterval(draw,60);
 
 </script>
 
