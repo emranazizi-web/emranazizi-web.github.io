@@ -21,12 +21,13 @@ body{
   overflow-x:hidden;
 }
 
-/* MATRIX BACKGROUND */
+/* MATRIX BACKGROUND (SLOW + LIGHT) */
 canvas{
   position:fixed;
   top:0;
   left:0;
   z-index:-10;
+  opacity:0.25; /* makes everything readable */
 }
 
 /* HEADER */
@@ -34,10 +35,11 @@ header{
   display:flex;
   justify-content:space-between;
   padding:15px 20px;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.7);
   border-bottom:1px solid #00ffcc;
   position:sticky;
   top:0;
+  z-index:10;
 }
 
 .logo{
@@ -81,11 +83,12 @@ nav a:hover{color:#ff00ff}
 }
 
 .profile img{
-  width:130px;
-  height:130px;
+  width:140px;
+  height:140px;
   border-radius:50%;
   border:3px solid #00ffcc;
-  box-shadow:0 0 20px #00ffcc;
+  box-shadow:0 0 25px #00ffcc;
+  object-fit:cover;
 }
 
 .profile h2{
@@ -93,13 +96,20 @@ nav a:hover{color:#ff00ff}
   text-shadow:0 0 10px #00ffcc;
 }
 
-/* SKILLS */
+.profile p{
+  margin:8px 0;
+  color:#ccc;
+  line-height:1.5;
+}
+
+/* SECTION */
 section{
   max-width:1000px;
   margin:auto;
   padding:40px 20px;
 }
 
+/* CARD */
 .card{
   background:rgba(0,255,204,0.05);
   border:1px solid #00ffcc;
@@ -108,6 +118,7 @@ section{
   border-radius:10px;
 }
 
+/* SKILL BAR */
 .bar{
   height:8px;
   background:#111;
@@ -117,19 +128,6 @@ section{
 .fill{
   height:100%;
   background:linear-gradient(90deg,#00ffcc,#ff00ff);
-}
-
-/* LION */
-#lion{
-  position:fixed;
-  width:120px;
-  height:120px;
-  right:20px;
-  bottom:80px;
-  background:url("https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg");
-  background-size:cover;
-  border-radius:10px;
-  box-shadow:0 0 20px orange;
 }
 
 /* FOOTER */
@@ -164,14 +162,15 @@ footer{
 
 <!-- PROFILE -->
 <section class="profile" id="about">
-  <img src="YOUR_PHOTO.jpg" alt="Emran">
+
+  <img src="myphoto.jpg" alt="Emran">
 
   <h2>About Me</h2>
 
   <p>Hello! I am <b>Emran</b>, a passionate future developer 🚀</p>
-  <p>I build cyber-style websites, game UI systems, and creative web projects.</p>
+  <p>I build cyber-style websites and game UI systems.</p>
   <p>🎮 PUBG Player | 💻 Coding Learner | 🚀 Future Engineer</p>
-  <p>My goal is to become a full stack developer and build powerful apps.</p>
+
 </section>
 
 <!-- SKILLS -->
@@ -179,24 +178,16 @@ footer{
 
   <h2>Skills</h2>
 
-  <div class="card">
-    HTML
+  <div class="card">HTML
     <div class="bar"><div class="fill" style="width:95%"></div></div>
   </div>
 
-  <div class="card">
-    CSS
+  <div class="card">CSS
     <div class="bar"><div class="fill" style="width:90%"></div></div>
   </div>
 
-  <div class="card">
-    JavaScript
+  <div class="card">JavaScript
     <div class="bar"><div class="fill" style="width:75%"></div></div>
-  </div>
-
-  <div class="card">
-    Game Development UI
-    <div class="bar"><div class="fill" style="width:65%"></div></div>
   </div>
 
 </section>
@@ -206,10 +197,9 @@ footer{
 
   <h2>Projects</h2>
 
-  <div class="card">Cyber Portfolio Website</div>
-  <div class="card">GTA Style UI Game System</div>
-  <div class="card">Matrix Animation Project</div>
-  <div class="card">Future AI Project</div>
+  <div class="card">Cyber Portfolio</div>
+  <div class="card">Game UI System</div>
+  <div class="card">Matrix Animation</div>
 
 </section>
 
@@ -225,16 +215,13 @@ footer{
 
 </section>
 
-<!-- LION -->
-<div id="lion"></div>
-
 <footer>
   Made with 💻 by Emran | Cyber Developer World
 </footer>
 
 <script>
 
-/* MATRIX */
+/* SLOW MATRIX (READABLE) */
 const c=document.getElementById("matrix");
 const ctx=c.getContext("2d");
 
@@ -242,12 +229,12 @@ c.width=window.innerWidth;
 c.height=window.innerHeight;
 
 let letters="01";
-let font=14;
+let font=16; // slower effect
 let cols=c.width/font;
 let drops=Array(Math.floor(cols)).fill(1);
 
 function draw(){
-  ctx.fillStyle="rgba(0,0,0,0.05)";
+  ctx.fillStyle="rgba(0,0,0,0.08)";
   ctx.fillRect(0,0,c.width,c.height);
 
   ctx.fillStyle="#00ffcc";
@@ -261,7 +248,8 @@ function draw(){
     drops[i]++;
   }
 }
-setInterval(draw,30);
+
+setInterval(draw,60); /* slower rain */
 
 </script>
 
