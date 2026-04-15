@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emran | Cyber Future Portfolio</title>
+<title>EMRAN | OPEN WORLD CYBER UI</title>
 
 <style>
 
@@ -11,13 +11,13 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-family:Arial;
 }
 
 body{
-  font-family:Arial;
   background:#000;
-  color:#e5e5e5;
-  overflow-x:hidden;
+  color:#00ffcc;
+  overflow:hidden;
 }
 
 /* MATRIX */
@@ -28,99 +28,93 @@ body{
   z-index:-5;
 }
 
-/* 001 BACKGROUND */
-body::before{
-  content:"001 001 001 001 001 001 001 001";
+/* HUD TOP BAR */
+#hud{
   position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  font-size:180px;
-  font-weight:bold;
-  color:rgba(255,120,0,0.05);
-  z-index:-4;
-  animation:glow 8s infinite alternate;
-}
-
-@keyframes glow{
-  0%{transform:translate(-50%,-50%) scale(1);opacity:0.3;}
-  100%{transform:translate(-50%,-50%) scale(1.2);opacity:0.7;}
-}
-
-/* NAV */
-nav{
-  position:sticky;
   top:0;
-  background:rgba(10,10,10,0.95);
+  left:0;
+  width:100%;
   padding:15px;
-  text-align:center;
-  border-bottom:1px solid #222;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(0,0,0,0.7);
+  border-bottom:1px solid #00ffcc;
 }
 
-nav a{
-  margin:10px;
-  text-decoration:none;
-  color:#00ffcc;
+/* PROFILE */
+.profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.profile img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  border:2px solid #00ffcc;
+}
+
+.profile span{
   font-weight:bold;
 }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:80px 20px;
+/* MENU MAP STYLE */
+#map{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
 }
 
-.hero h1{
-  font-size:60px;
+/* BUTTONS (MISSIONS) */
+.btn{
+  margin:10px;
+  padding:15px 25px;
+  border:1px solid #00ffcc;
+  background:transparent;
   color:#00ffcc;
-}
-
-.hero p{
-  color:#aaa;
-}
-
-/* CARDS */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-.card{
-  background:rgba(20,20,20,0.9);
-  padding:25px;
-  margin:20px 0;
-  border-radius:15px;
-  border:1px solid #222;
-}
-
-/* IMAGE BOX */
-.img-box{
-  text-align:center;
-  margin-top:15px;
-}
-
-.img-box img{
-  width:250px;
-  border-radius:15px;
-  border:2px solid #00ffcc;
-  box-shadow:0 0 20px rgba(0,255,204,0.3);
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-/* BUTTON */
-button{
-  padding:10px 15px;
-  background:#00ffcc;
-  border:none;
-  border-radius:10px;
   cursor:pointer;
+  transition:0.3s;
+  width:220px;
+  text-align:center;
+}
+
+.btn:hover{
+  background:#00ffcc;
+  color:#000;
+  transform:scale(1.1);
+}
+
+/* PANEL */
+.panel{
+  display:none;
+  padding:40px;
+  height:100vh;
+  overflow:auto;
+}
+
+/* CARD */
+.card{
+  background:rgba(0,255,204,0.05);
+  border:1px solid #00ffcc;
+  padding:20px;
+  margin:15px 0;
+  border-radius:10px;
+}
+
+/* TITLE */
+.title{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+/* BACK BUTTON */
+.back{
+  margin-top:20px;
+  background:#00ffcc;
+  color:#000;
 }
 
 </style>
@@ -130,71 +124,67 @@ button{
 
 <canvas id="matrix"></canvas>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#life">Life</a>
-  <a href="#gaming">Gaming</a>
-  <a href="#cars">Cars</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<div class="hero" id="home">
-  <h1>EMRAN 🚀</h1>
-  <p>Cyber Developer | Gamer | Dream Builder</p>
+<!-- HUD -->
+<div id="hud">
+  <div class="profile">
+    <img src="YOUR_PHOTO.jpg" alt="profile">
+    <span>EMRAN PLAYER</span>
+  </div>
+  <div>STATUS: ONLINE ⚡</div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- MAP MENU -->
+<div id="map">
+  <h1 class="title">OPEN WORLD MENU</h1>
+
+  <button class="btn" onclick="openPanel('about')">🏠 ABOUT MISSION</button>
+  <button class="btn" onclick="openPanel('skills')">⚔ SKILLS STATS</button>
+  <button class="btn" onclick="openPanel('gaming')">🎮 GAMING MODE</button>
+  <button class="btn" onclick="openPanel('projects')">💼 PROJECTS</button>
+  <button class="btn" onclick="openPanel('contact')">📡 CONTACT</button>
+</div>
+
+<!-- PANELS -->
+<div id="about" class="panel">
+  <h1>ABOUT MISSION</h1>
   <div class="card">
-    <h2>About Me</h2>
-    <p>I am learning coding and building future websites step by step.</p>
-
-    <div class="img-box">
-      <img src="YOUR_PHOTO.jpg" alt="My Photo">
-      <p>💻 Busy in coding on computer</p>
-    </div>
+    You are Emran — building your cyber future world step by step.
   </div>
-</section>
+  <button class="btn back" onclick="back()">BACK</button>
+</div>
 
-<!-- GAMING -->
-<section id="gaming">
-  <div class="card">
-    <h2>Gaming 🎮</h2>
-    <p>I play PUBG and enjoy gaming world.</p>
+<div id="skills" class="panel">
+  <h1>SKILL STATS</h1>
+  <div class="card">HTML ██████████ 95%</div>
+  <div class="card">CSS █████████ 90%</div>
+  <div class="card">JS ██████ 60%</div>
+  <button class="btn back" onclick="back()">BACK</button>
+</div>
 
-    <div class="img-box">
-      <img src="GAMER_IMAGE.jpg" alt="Gaming">
-      <p>🎮 Playing games like a pro</p>
-    </div>
-  </div>
-</section>
+<div id="gaming" class="panel">
+  <h1>GAMING MODE</h1>
+  <div class="card">🎮 PUBG Player</div>
+  <div class="card">🔥 Competitive Gamer</div>
+  <button class="btn back" onclick="back()">BACK</button>
+</div>
 
-<!-- CARS -->
-<section id="cars">
-  <div class="card">
-    <h2>Dream Car 🚗</h2>
-    <p>Lamborghini is my dream car.</p>
+<div id="projects" class="panel">
+  <h1>PROJECT MISSIONS</h1>
+  <div class="card">Cyber Portfolio</div>
+  <div class="card">GTA UI Website</div>
+  <div class="card">Future App</div>
+  <button class="btn back" onclick="back()">BACK</button>
+</div>
 
-    <div class="img-box">
-      <img src="LAMBORGHINI.jpg" alt="Car">
-      <p>🔥 Lamborghini Dream</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="card">
-    <h2>Contact</h2>
-    <p>Email: emran@example.com</p>
-    <button onclick="alert('Message Sent 🚀')">Send</button>
-  </div>
-</section>
+<div id="contact" class="panel">
+  <h1>CONTACT SYSTEM</h1>
+  <div class="card">Email: emran@example.com</div>
+  <button class="btn back" onclick="back()">BACK</button>
+</div>
 
 <script>
 
-/* MATRIX EFFECT */
+/* MATRIX */
 const canvas=document.getElementById("matrix");
 const ctx=canvas.getContext("2d");
 
@@ -212,7 +202,7 @@ function draw(){
   ctx.fillRect(0,0,canvas.width,canvas.height);
 
   ctx.fillStyle="#00ffcc";
-  ctx.font=fontSize+"px Arial";
+  ctx.font=fontSize+"px monospace";
 
   for(let i=0;i<drops.length;i++){
     let text=letters[Math.floor(Math.random()*letters.length)];
@@ -226,6 +216,18 @@ function draw(){
 }
 
 setInterval(draw,30);
+
+/* OPEN / CLOSE PANELS */
+function openPanel(id){
+  document.getElementById("map").style.display="none";
+  document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
+}
+
+function back(){
+  document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+  document.getElementById("map").style.display="flex";
+}
 
 </script>
 
