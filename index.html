@@ -17,16 +17,29 @@ body {
 
 /* BIG ORANGE 001 BACKGROUND */
 body::before {
-  content: "001";
+  content: "001 001 001 001";
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 250px;
+  font-size: 200px;
   font-weight: bold;
-  color: rgba(255, 102, 0, 0.08);
+  color: rgba(255, 102, 0, 0.06);
   z-index: -1;
-  letter-spacing: 20px;
+  letter-spacing: 30px;
+  animation: glowMove 6s infinite alternate ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes glowMove {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.7;
+  }
 }
 
 /* HEADER */
