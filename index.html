@@ -3,205 +3,295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emran | Developer Portfolio</title>
+<title>Emran | Future Developer Portfolio</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #e5e5e5;
-  position: relative;
-  overflow-x: hidden;
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* BIG ORANGE 001 BACKGROUND */
-body::before {
-  content: "001 001 001 001";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 200px;
-  font-weight: bold;
-  color: rgba(255, 102, 0, 0.06);
-  z-index: -1;
-  letter-spacing: 30px;
-  animation: glowMove 6s infinite alternate ease-in-out;
+body{
+  font-family: Arial;
+  background:#000;
+  color:#e5e5e5;
+  overflow-x:hidden;
 }
 
-/* ANIMATION */
-@keyframes glowMove {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.4;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.7;
-  }
+/* MATRIX */
+#matrix{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-4;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 50px 20px;
+/* 001 BACKGROUND */
+body::before{
+  content:"001 001 001 001 001 001 001 001 001";
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:180px;
+  font-weight:bold;
+  color:rgba(255,100,0,0.05);
+  letter-spacing:35px;
+  z-index:-3;
+  animation:floatGlow 10s infinite alternate;
 }
 
-header h1 {
-  font-size: 50px;
-}
-
-.accent {
-  color: #00ffcc;
+@keyframes floatGlow{
+  0%{transform:translate(-50%,-50%) scale(1); opacity:0.3;}
+  100%{transform:translate(-50%,-50%) scale(1.2); opacity:0.6;}
 }
 
 /* NAV */
-nav {
-  text-align: center;
-  background: #111;
-  padding: 15px;
-  position: sticky;
-  top: 0;
+nav{
+  position:sticky;
+  top:0;
+  background:rgba(10,10,10,0.95);
+  padding:15px;
+  text-align:center;
+  border-bottom:1px solid #222;
 }
 
-nav a {
-  color: #00ffcc;
-  margin: 10px;
-  text-decoration: none;
-  font-weight: bold;
+nav a{
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+  background: linear-gradient(90deg,#00ffcc,#ff00ff,#00ccff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-nav a:hover {
-  color: #00ffaa;
+/* HERO */
+.hero{
+  text-align:center;
+  padding:90px 20px;
 }
 
-/* SECTION */
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+.hero h1{
+  font-size:65px;
+  background: linear-gradient(90deg,#00ffcc,#ff00ff,#ffcc00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.card {
-  background: #111;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
-  border: 1px solid #222;
-  box-shadow: 0 0 15px rgba(0,255,204,0.08);
+.subtitle{
+  color:#aaa;
+  margin-top:10px;
 }
 
-/* IMAGE */
-img {
-  width: 120px;
-  border-radius: 50%;
-  border: 2px solid #00ffcc;
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(20,20,20,0.95);
+  padding:25px;
+  margin:20px 0;
+  border-radius:15px;
+  border:1px solid #222;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 25px rgba(0,255,255,0.2);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
+}
+
+/* SKILL BAR */
+.skill{
+  margin:10px 0;
+}
+
+.bar{
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.fill{
+  height:10px;
+  background:linear-gradient(90deg,#00ffcc,#ff00ff,#ffcc00);
 }
 
 /* BUTTON */
-button {
-  background: #00ffcc;
-  color: #000;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+button{
+  padding:12px 18px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+  background:linear-gradient(90deg,#00ffcc,#ff00ff,#ffcc00);
+  color:#000;
 }
 
-button:hover {
-  background: #00ffaa;
+button:hover{
+  transform:scale(1.05);
+}
+
+/* BADGE */
+.badge{
+  display:inline-block;
+  padding:5px 10px;
+  margin:5px;
+  border-radius:20px;
+  background:#111;
+  border:1px solid #333;
+  font-size:12px;
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  margin-top: 40px;
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0a0a0a;
+  border-top:1px solid #222;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<canvas id="matrix"></canvas>
+
 <nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#gaming">Gaming</a>
-  <a href="#contact">Contact</a>
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#skills">SKILLS</a>
+  <a href="#projects">PROJECTS</a>
+  <a href="#achievements">ACHIEVEMENTS</a>
+  <a href="#gaming">GAMING</a>
+  <a href="#contact">CONTACT</a>
 </nav>
 
-<!-- HOME -->
-<header id="home">
-  <h1>Hi, I'm <span class="accent">Emran</span> 👋</h1>
-  <p>Software Engineering Student | Future Developer</p>
-</header>
+<div class="hero" id="home">
+  <h1>EMRAN</h1>
+  <div class="subtitle">Future Full Stack Developer 🚀</div>
+</div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="card">
-    <h2>About Me 👤</h2>
-    <p>I am a software engineering student learning web development, coding, and building real-world projects step by step.</p>
+    <h2>About Me</h2>
+    <p>I am learning coding, building websites, and improving every day.</p>
+    <div>
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+      <span class="badge">GitHub</span>
+      <span class="badge">JavaScript</span>
+    </div>
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="card">
-    <h2>Skills 🧠</h2>
-    <ul>
-      <li>HTML (Learning)</li>
-      <li>CSS (Learning)</li>
-      <li>Git & GitHub</li>
-      <li>Problem Solving</li>
-    </ul>
+    <h2>Skills</h2>
+
+    <p>HTML</p>
+    <div class="bar"><div class="fill" style="width:95%"></div></div>
+
+    <p>CSS</p>
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+
+    <p>JavaScript</p>
+    <div class="bar"><div class="fill" style="width:70%"></div></div>
+
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="card">
-    <h2>Projects 💼</h2>
-    <p>✔ My First Website</p>
-    <p>✔ GitHub Portfolio</p>
-    <p>✔ More coming soon...</p>
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">Cyber Portfolio</div>
+      <div class="card">Landing Page</div>
+      <div class="card">GitHub Pages Site</div>
+      <div class="card">More Coming Soon</div>
+    </div>
   </div>
 </section>
 
-<!-- GAMING -->
+<section id="achievements">
+  <div class="card">
+    <h2>Achievements 🏆</h2>
+    <p>✔ Started Web Development</p>
+    <p>✔ Built first portfolio</p>
+    <p>✔ Uploaded project on GitHub</p>
+  </div>
+</section>
+
 <section id="gaming">
   <div class="card">
     <h2>Gaming 🎮</h2>
-    <p>I enjoy playing PUBG in my free time.</p>
+    <p>Playing PUBG and competitive games</p>
   </div>
 </section>
 
-<!-- PHOTO -->
-<section>
-  <div class="card">
-    <h2>My Photo 📸</h2>
-    <img src="https://via.placeholder.com/120">
-    <p>Replace this with your real photo later</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="card">
-    <h2>Contact 📧</h2>
+    <h2>Contact</h2>
     <p>Email: emran@example.com</p>
-    <button onclick="alert('Thanks for visiting my portfolio!')">Say Hello</button>
+    <button onclick="alert('Message Sent 🚀')">Send Message</button>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>Made with ❤️ by Emran</p>
 </footer>
+
+<script>
+
+/* MATRIX */
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let letters="01".split("");
+let fontSize=14;
+let columns=canvas.width/fontSize;
+
+let drops=Array(Math.floor(columns)).fill(1);
+
+function draw(){
+  ctx.fillStyle="rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle="#00ffcc";
+  ctx.font=fontSize+"px Arial";
+
+  for(let i=0;i<drops.length;i++){
+    let text=letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+    if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
+      drops[i]=0;
+    }
+    drops[i]++;
+  }
+}
+
+setInterval(draw,35);
+
+</script>
 
 </body>
 </html>
