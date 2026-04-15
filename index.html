@@ -11,6 +11,22 @@ body {
   font-family: Arial, sans-serif;
   background: #000;
   color: #e5e5e5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* BIG ORANGE 001 BACKGROUND */
+body::before {
+  content: "001";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 250px;
+  font-weight: bold;
+  color: rgba(255, 102, 0, 0.08);
+  z-index: -1;
+  letter-spacing: 20px;
 }
 
 /* HEADER */
