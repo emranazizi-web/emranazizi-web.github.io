@@ -1,62 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emran // Dev Mode</title>
+  <title>Emran | Developer Portfolio</title>
 
   <style>
     body {
       margin: 0;
-      background: #050505;
-      color: #00ff88;
-      font-family: "Courier New", monospace;
-    }
-
-    .container {
-      padding: 80px 20px;
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: #e5e5e5;
       text-align: center;
     }
 
+    .container {
+      padding: 60px 20px;
+    }
+
     h1 {
-      font-size: 40px;
-      text-shadow: 0 0 10px #00ff88;
+      font-size: 45px;
+      margin-bottom: 10px;
+      color: #ffffff;
     }
 
     p {
-      color: #b6ffda;
       font-size: 18px;
+      color: #b3b3b3;
     }
 
-    .box {
-      border: 1px solid #00ff88;
-      padding: 20px;
+    .accent {
+      color: #00ffcc;
+    }
+
+    .card {
+      background: #111111;
       margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 0 15px #00ff88;
+      padding: 20px;
+      width: 85%;
+      max-width: 500px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      box-shadow: 0 0 15px rgba(0,255,204,0.1);
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #00ffaa;
     }
 
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      border: 1px solid #00ff88;
-      color: #00ff88;
-      text-decoration: none;
-      transition: 0.3s;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      border-radius: 8px;
     }
 
     .btn:hover {
-      background: #00ff88;
+      background: #00ffcc;
       color: #000;
-    }
-
-    .cursor {
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
     }
   </style>
 </head>
@@ -64,20 +72,29 @@
 <body>
 
   <div class="container">
-    <h1>> Emran.exe <span class="cursor">_</span></h1>
-    <p>Software Engineering Student // System Initializing...</p>
 
-    <div class="box">
-      <p>> About_Me</p>
-      <p>I am learning programming, building systems, and exploring web development.</p>
+    <h1>Hi, I'm <span class="accent">Emran</span> 👋</h1>
+    <p>Software Engineering Student | Future Developer</p>
+
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am learning programming and building modern web projects step by step.</p>
     </div>
 
-    <div class="box">
-      <p>> Mission</p>
-      <p>Become a professional developer and build powerful applications.</p>
+    <div class="card">
+      <h2>Skills</h2>
+      <p>HTML • CSS • GitHub • Learning JavaScript</p>
     </div>
 
-    <a class="btn" href="#">CONTACT_TERMINAL</a>
+    <div class="card">
+      <h2>Navigation</h2>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+    </div>
+
+    <a class="btn" href="projects.html">View My Work</a>
+
   </div>
 
 </body>
