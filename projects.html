@@ -1,22 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Projects</title>
-</head>
-<body>
+<section id="projects">
 
-  <h1>Projects 💼</h1>
+  <h2>🚀 My Projects</h2>
 
-  <ul>
-    <li>My first website</li>
-    <li>Portfolio website</li>
-  </ul>
+  <div class="grid">
 
-  <hr>
+    <div class="card">
+      <h3>🌐 Cyber Portfolio</h3>
+      <p>Personal cyber-style developer portfolio with neon UI and animations.</p>
+      <div>
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">JavaScript</span>
+      </div>
+      <button onclick="alert('Opening Portfolio')">View Project</button>
+    </div>
 
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="skills.html">Skills</a>
+    <div class="card">
+      <h3>🎮 Cyber Game UI</h3>
+      <p>Mini GTA-style game system with movement, enemies, and shooting mechanics.</p>
+      <div>
+        <span class="badge">Canvas</span>
+        <span class="badge">JS</span>
+      </div>
+      <button onclick="alert('Starting Game Demo')">Play Game</button>
+    </div>
 
-</body>
-</html>
+    <div class="card">
+      <h3>⚡ Matrix Animation</h3>
+      <p>Futuristic falling code background using HTML Canvas API.</p>
+      <div>
+        <span class="badge">Canvas</span>
+        <span class="badge">Animation</span>
+      </div>
+      <button onclick="alert('Matrix Effect Running')">View Effect</button>
+    </div>
+
+    <div class="card">
+      <h3>🧠 AI Future Project</h3>
+      <p>Concept AI assistant web system for smart interaction in future apps.</p>
+      <div>
+        <span class="badge">AI</span>
+        <span class="badge">Future Tech</span>
+      </div>
+      <button onclick="alert('Coming Soon')">Coming Soon</button>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.card{
+  background:rgba(0,255,204,0.05);
+  border:1px solid #00ffcc;
+  padding:15px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 15px #00ffcc;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  margin:4px 4px 0 0;
+  border:1px solid #00ffcc;
+  border-radius:20px;
+  font-size:11px;
+  color:#00ffcc;
+}
+
+button{
+  margin-top:10px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,#00ffcc,#ff00ff);
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+</style>
