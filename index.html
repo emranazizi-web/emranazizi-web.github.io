@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMRAN | Cyber Developer Universe</title>
+<title>EMRAN | Cyber Developer Portfolio</title>
 
 <style>
 
@@ -33,7 +33,7 @@ canvas{
 header{
   display:flex;
   justify-content:space-between;
-  padding:20px;
+  padding:15px 20px;
   background:rgba(0,0,0,0.6);
   border-bottom:1px solid #00ffcc;
   position:sticky;
@@ -41,12 +41,11 @@ header{
 }
 
 .logo{
-  font-size:20px;
+  font-size:18px;
   font-weight:bold;
   text-shadow:0 0 10px #00ffcc;
 }
 
-/* NAV */
 nav a{
   margin:0 10px;
   color:#00ffcc;
@@ -58,78 +57,79 @@ nav a:hover{color:#ff00ff}
 /* HERO */
 .hero{
   text-align:center;
-  padding:80px 20px;
+  padding:70px 20px;
 }
 
 .hero h1{
-  font-size:55px;
-  text-shadow:0 0 25px #00ffcc;
+  font-size:50px;
+  text-shadow:0 0 20px #00ffcc;
 }
 
 .hero p{
   color:#aaa;
 }
 
-/* SECTION */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-}
-
-/* CARD */
-.card{
+/* PROFILE */
+.profile{
+  max-width:900px;
+  margin:40px auto;
+  text-align:center;
+  padding:30px;
   background:rgba(0,255,204,0.05);
   border:1px solid #00ffcc;
-  padding:20px;
-  margin:15px 0;
   border-radius:10px;
-  transition:0.3s;
-}
-.card:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 20px #00ffcc;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-/* PROFILE */
 .profile img{
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
   border-radius:50%;
   border:3px solid #00ffcc;
   box-shadow:0 0 20px #00ffcc;
 }
 
-/* SKILL BAR */
+.profile h2{
+  margin:10px 0;
+  text-shadow:0 0 10px #00ffcc;
+}
+
+/* SKILLS */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.card{
+  background:rgba(0,255,204,0.05);
+  border:1px solid #00ffcc;
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+}
+
 .bar{
   height:8px;
   background:#111;
   border:1px solid #00ffcc;
 }
+
 .fill{
   height:100%;
   background:linear-gradient(90deg,#00ffcc,#ff00ff);
 }
 
-/* TIMELINE */
-.timeline{
-  border-left:2px solid #00ffcc;
-  padding-left:20px;
-}
-.timeline div{
-  margin:20px 0;
-}
-
-/* GLOW TEXT */
-.glow{
-  text-shadow:0 0 10px #00ffcc;
+/* LION */
+#lion{
+  position:fixed;
+  width:120px;
+  height:120px;
+  right:20px;
+  bottom:80px;
+  background:url("https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg");
+  background-size:cover;
+  border-radius:10px;
+  box-shadow:0 0 20px orange;
 }
 
 /* FOOTER */
@@ -152,111 +152,84 @@ footer{
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-    <a href="#timeline">Journey</a>
     <a href="#projects">Projects</a>
-    <a href="#gaming">Gaming</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <div class="hero">
-  <h1>EMRAN 🚀</h1>
+  <h1>Hi, I'm EMRAN 👨‍💻</h1>
   <p>Cyber Developer | PUBG Player 🎮 | Future Full Stack Engineer</p>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="card profile">
-    <img src="YOUR_PHOTO.jpg">
-    <h2 class="glow">About Me</h2>
-    <p>
-      I am Emran. I build cyber-style websites, learn coding daily, and improve step by step.
-      I love PUBG, gaming strategy, and becoming a full stack developer.
-    </p>
-  </div>
+<!-- PROFILE -->
+<section class="profile" id="about">
+  <img src="YOUR_PHOTO.jpg" alt="Emran">
+
+  <h2>About Me</h2>
+
+  <p>Hello! I am <b>Emran</b>, a passionate future developer 🚀</p>
+  <p>I build cyber-style websites, game UI systems, and creative web projects.</p>
+  <p>🎮 PUBG Player | 💻 Coding Learner | 🚀 Future Engineer</p>
+  <p>My goal is to become a full stack developer and build powerful apps.</p>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h2>Skills Dashboard</h2>
+
+  <h2>Skills</h2>
 
   <div class="card">
     HTML
-    <div class="bar"><div class="fill" style="width:90%"></div></div>
+    <div class="bar"><div class="fill" style="width:95%"></div></div>
   </div>
 
   <div class="card">
     CSS
-    <div class="bar"><div class="fill" style="width:85%"></div></div>
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
   </div>
 
   <div class="card">
     JavaScript
-    <div class="bar"><div class="fill" style="width:70%"></div></div>
+    <div class="bar"><div class="fill" style="width:75%"></div></div>
   </div>
 
   <div class="card">
-    Problem Solving
-    <div class="bar"><div class="fill" style="width:60%"></div></div>
+    Game Development UI
+    <div class="bar"><div class="fill" style="width:65%"></div></div>
   </div>
 
-</section>
-
-<!-- TIMELINE -->
-<section id="timeline">
-  <h2>My Coding Journey</h2>
-
-  <div class="timeline">
-    <div>📌 Started learning HTML</div>
-    <div>📌 Built first website</div>
-    <div>📌 Learned CSS styling</div>
-    <div>📌 Created cyber portfolio</div>
-    <div>📌 Learning JavaScript now</div>
-  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
+
   <h2>Projects</h2>
 
-  <div class="grid">
-
-    <div class="card">Cyber GTA Game UI</div>
-    <div class="card">Portfolio Website</div>
-    <div class="card">Landing Page Design</div>
-    <div class="card">Future AI Project</div>
-    <div class="card">Gaming Dashboard UI</div>
-    <div class="card">More Coming Soon...</div>
-
-  </div>
-</section>
-
-<!-- GAMING -->
-<section id="gaming">
-  <h2>Gaming Profile 🎮</h2>
-
-  <div class="card">
-    PUBG Player 🏆<br>
-    Rank: Competitive Learner<br>
-    Style: Aggressive + Strategy
-  </div>
+  <div class="card">Cyber Portfolio Website</div>
+  <div class="card">GTA Style UI Game System</div>
+  <div class="card">Matrix Animation Project</div>
+  <div class="card">Future AI Project</div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+
   <h2>Contact</h2>
 
   <div class="card">
     Email: emran@example.com<br>
-    GitHub: github.com/emran<br>
-    Status: Available for projects 🚀
+    GitHub: github.com/emran
   </div>
 
 </section>
 
+<!-- LION -->
+<div id="lion"></div>
+
 <footer>
-  Made with 💻 by Emran | Cyber Universe Developer
+  Made with 💻 by Emran | Cyber Developer World
 </footer>
 
 <script>
