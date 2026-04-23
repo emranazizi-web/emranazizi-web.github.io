@@ -1,21 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial;
-}
-
+/* ===== GOOGLE FONT SETUP ===== */
 body {
-  background: #050b14;
-  color: #e6f1ff;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* MATRIX CANVAS */
+/* MATRIX BACKGROUND */
 #matrix {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -10;
+  opacity: 0.18;
 }
 
 /* SIDEBAR */
@@ -23,19 +17,24 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  width: 220px;
+  width: 240px;
   height: 100%;
-  background: rgba(10, 20, 40, 0.9);
-  padding-top: 30px;
+  background: rgba(10, 20, 40, 0.85);
+  backdrop-filter: blur(10px);
   border-right: 1px solid #1f3b57;
+  padding-top: 30px;
 }
 
+/* LOGO */
 .logo {
   text-align: center;
-  color: #4da3ff;
-  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ff9d;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
+/* LINKS */
 nav a {
   display: block;
   padding: 15px;
@@ -45,28 +44,35 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(77, 163, 255, 0.2);
-  color: #4da3ff;
+  color: #00ff9d;
+  transform: translateX(8px);
 }
 
 /* MAIN */
 main {
-  margin-left: 240px;
-  padding: 30px;
+  margin-left: 260px;
+  padding: 40px;
 }
 
-h1 {
-  color: white;
-  margin-bottom: 15px;
+/* HEADINGS */
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #4da3ff;
 }
 
-/* CARD */
+/* CARDS */
 .card {
-  background: rgba(77, 163, 255, 0.05);
+  background: rgba(77, 163, 255, 0.08);
   border: 1px solid #1f3b57;
   padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
+  margin: 20px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0,255,157,0.3);
+  transform: translateY(-5px);
 }
 
 /* FOOTER */
@@ -74,6 +80,5 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #1f3b57;
-  margin-top: 40px;
   color: #9fb3c8;
 }
