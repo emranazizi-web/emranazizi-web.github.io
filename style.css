@@ -122,3 +122,23 @@ nav a {
     transform: translateY(0);
 }
 
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* improve project cards */
+#projects-container .card {
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid #00c3ff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#projects-container .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00c3ff;
+}
