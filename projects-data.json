@@ -1,1 +1,17 @@
-
+[
+    {
+        "title": "Portfolio Website",
+        "description": "My personal developer portfolio with animations and particles.",
+        "tech": "HTML, CSS, JavaScript"
+    },
+    {
+        "title": "Python Calculator",
+        "description": "Simple calculator built using Python basics.",
+        "tech": "Python"
+    },
+    {
+        "title": "University Projects",
+        "description": "Academic projects in software engineering foundation.",
+        "tech": "C, Python, Math"
+    }
+]
