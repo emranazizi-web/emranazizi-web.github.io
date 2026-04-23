@@ -3,255 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMRAN | Cyber Developer Portfolio</title>
-
-<style>
-
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
-}
-
-body{
-  background:#000;
-  color:#00ffcc;
-  overflow-x:hidden;
-}
-
-/* MATRIX BACKGROUND */
-canvas{
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:-10;
-  opacity:0.2;
-}
-
-/* HEADER */
-header{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 20px;
-  background:rgba(0,0,0,0.7);
-  border-bottom:1px solid #00ffcc;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  font-size:18px;
-  font-weight:bold;
-  text-shadow:0 0 10px #00ffcc;
-}
-
-nav a{
-  margin:0 10px;
-  color:#00ffcc;
-  text-decoration:none;
-  font-size:13px;
-}
-nav a:hover{color:#ff00ff}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:70px 20px;
-}
-
-.hero h1{
-  font-size:50px;
-  text-shadow:0 0 20px #00ffcc;
-}
-
-.hero p{
-  color:#aaa;
-}
-
-/* PROFILE */
-.profile{
-  max-width:900px;
-  margin:40px auto;
-  text-align:center;
-  padding:30px;
-  background:rgba(0,255,204,0.05);
-  border:1px solid #00ffcc;
-  border-radius:10px;
-}
-
-.profile img{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  border:3px solid #00ffcc;
-  box-shadow:0 0 25px #00ffcc;
-  object-fit:cover;
-}
-
-.profile h2{
-  margin:10px 0;
-}
-
-.profile p{
-  margin:8px 0;
-  color:#ccc;
-  line-height:1.5;
-}
-
-/* SECTION */
-section{
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-/* CARD */
-.card{
-  background:rgba(0,255,204,0.05);
-  border:1px solid #00ffcc;
-  padding:15px;
-  margin:10px 0;
-  border-radius:10px;
-}
-
-/* SKILL BAR */
-.bar{
-  height:8px;
-  background:#111;
-  border:1px solid #00ffcc;
-}
-
-.fill{
-  height:100%;
-  background:linear-gradient(90deg,#00ffcc,#ff00ff);
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid #00ffcc;
-  margin-top:40px;
-}
-
-</style>
+<title>Emran Azizi | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
+<!-- SIDEBAR NAVIGATION -->
+<nav>
+  <h3 style="color:#4da3ff; text-align:center; margin-bottom:20px;">
+    EMRAN.AZIZI
+  </h3>
 
-<header>
-  <div class="logo">EMRAN.DEV</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-<div class="hero">
-  <h1>Hi, I'm EMRAN 👨‍💻</h1>
-  <p>Cyber Developer | PUBG Player 🎮 | Future Full Stack Engineer</p>
-</div>
+<!-- MAIN CONTENT -->
+<main>
 
-<!-- PROFILE -->
-<section class="profile" id="about">
+  <h1>Hi, I'm Emran Azizi 👨‍💻</h1>
 
-  <!-- NEW GITHUB PHOTO -->
-  <img src="https://raw.githubusercontent.com/emranazizi-web/emranazizi-web.github.io/129ef207157e4caafe697aed62b2302a1d3dc874/_4d3614c4ed117e99ab4ec68d7497522d%202.jpeg" alt="My Photo">
-
-  <h2>About Me</h2>
-
-  <p>Hello! I am Emran 🚀</p>
-  <p>I build cyber-style websites and UI projects.</p>
-  <p>🎮 Gamer | 💻 Coder | 🚀 Future Developer</p>
-
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-
-  <h2>Skills</h2>
-
-  <div class="card">HTML
-    <div class="bar"><div class="fill" style="width:95%"></div></div>
-  </div>
-
-  <div class="card">CSS
-    <div class="bar"><div class="fill" style="width:90%"></div></div>
-  </div>
-
-  <div class="card">JavaScript
-    <div class="bar"><div class="fill" style="width:75%"></div></div>
-  </div>
-
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-
-  <h2>Projects</h2>
-
-  <div class="card">Cyber Portfolio</div>
-  <div class="card">Game UI System</div>
-  <div class="card">Matrix Animation</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-
-  <h2>Contact</h2>
+  <p>
+    Software Engineering Student | Aspiring Full-Stack Developer
+  </p>
 
   <div class="card">
-    Email: emran@example.com<br>
-    GitHub: github.com/emran
+    <h2>Welcome to my portfolio</h2>
+    <p>
+      I am a software engineering student from Afghanistan, currently studying in Germany.
+      I focus on building strong foundations in computer science and web development.
+    </p>
   </div>
 
-</section>
+  <div class="card">
+    <h2>Quick Overview</h2>
+    <ul>
+      <li>🎓 Software Engineering Student (2nd Semester)</li>
+      <li>💻 Learning Full-Stack Development</li>
+      <li>🌐 A+ Network Certified</li>
+      <li>📚 Foundation Course Completed</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Career Goal</h2>
+    <p>
+      My goal is to become a professional full-stack developer and software engineer,
+      and later achieve a PhD in software engineering.
+    </p>
+
+    <button>Download CV (Coming Soon)</button>
+  </div>
+
+</main>
 
 <footer>
-  Made with 💻 by Emran | Cyber Developer World
+  © 2026 Emran Azizi | Software Engineering Portfolio
 </footer>
-
-<script>
-
-/* MATRIX EFFECT */
-const c=document.getElementById("matrix");
-const ctx=c.getContext("2d");
-
-c.width=window.innerWidth;
-c.height=window.innerHeight;
-
-let letters="01";
-let font=16;
-let cols=c.width/font;
-let drops=Array(Math.floor(cols)).fill(1);
-
-function draw(){
-  ctx.fillStyle="rgba(0,0,0,0.08)";
-  ctx.fillRect(0,0,c.width,c.height);
-
-  ctx.fillStyle="#00ffcc";
-  ctx.font=font+"px monospace";
-
-  for(let i=0;i<drops.length;i++){
-    let t=letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(t,i*font,drops[i]*font);
-
-    if(drops[i]*font>c.height) drops[i]=0;
-    drops[i]++;
-  }
-}
-
-setInterval(draw,60);
-
-</script>
 
 </body>
 </html>
