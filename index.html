@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Emran Azizi | Portfolio</title>
+<title>Emran Azizi | Developer Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -12,54 +12,66 @@
 
 <body>
 
-<nav>
-  <div class="logo">Emran Azizi</div>
+<div class="bg"></div>
 
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</nav>
+<header class="reveal">
+  <h1>Emran Azizi</h1>
+  <p>Software Engineering Student • Future Full Stack Developer</p>
+</header>
 
 <main>
 
-<section id="home">
-  <h1>Emran Azizi</h1>
-  <p>Software Engineering Student | Future Full Stack Developer</p>
-</section>
-
-<section id="about">
-  <h2>About Me</h2>
+<section class="reveal">
+  <h2>About</h2>
   <p>
     I am a software engineering student from Afghanistan studying in Germany at GISMA University.
-    I am focused on becoming a professional full-stack developer.
+    I focus on web development, programming, and becoming a full stack developer.
   </p>
 </section>
 
-<section id="education">
+<section class="reveal">
   <h2>Education</h2>
-  <p>
-    BEng Software Engineering (Foundation Year)<br>
-    GISMA University, Berlin<br>
-    2nd Semester
-  </p>
+  <p>BEng Software Engineering (Foundation Year)</p>
+  <p>GISMA University of Applied Sciences, Berlin</p>
+  <p>2nd Semester</p>
 </section>
 
-<section id="skills">
+<section class="reveal">
   <h2>Skills</h2>
-  <p>HTML, CSS, JavaScript (Learning)</p>
-  <p>Python (Basic)</p>
-  <p>A+ Network, N+</p>
+  <p>HTML • CSS • JavaScript</p>
+  <p>Python • A+ Network • N+</p>
   <p>Project Management</p>
 </section>
 
-<section id="contact">
+<section class="reveal">
+  <h2>Projects</h2>
+  <p>Portfolio Website (This Project)</p>
+</section>
+
+<section class="reveal">
   <h2>Contact</h2>
   <p>Email: emranazizi1002@gmail.com</p>
 </section>
 
 </main>
+
+<script>
+const items = document.querySelectorAll(".reveal");
+
+function show() {
+  const trigger = window.innerHeight * 0.85;
+
+  items.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < trigger) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", show);
+show();
+</script>
 
 </body>
 </html>
