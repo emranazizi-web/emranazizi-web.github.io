@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emran Azizi | Portfolio</title>
+
+<title>Emran Azizi | Cyber Portfolio</title>
+
+<!-- GOOGLE FONT (MODERN + SMART) -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +19,7 @@
 
 <!-- SIDEBAR -->
 <nav>
-  <h3 class="logo">EMRAN.AZIZI</h3>
+  <div class="logo">EMRAN.AZIZI</div>
 
   <a href="#home">Home</a>
   <a href="#about">About</a>
@@ -30,40 +35,42 @@
 <section id="home">
   <h1>Hi, I'm Emran Azizi 👨‍💻</h1>
   <div class="card">
-    Software Engineering Student | Aspiring Full-Stack Developer
+    Software Engineering Student | Future Full Stack Developer
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h1>About Me</h1>
+  <h2>About Me</h2>
   <div class="card">
-    I am a software engineering student from Afghanistan studying in Germany at GISMA University.
+    I am a software engineering student from Afghanistan studying in Germany.
+    Passionate about web development, cyber systems, and modern software engineering.
   </div>
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
-  <h1>Education</h1>
+  <h2>Education</h2>
   <div class="card">
-    BEng Software Engineering (Foundation Year) - 2nd Semester<br>
-    GISMA University, Berlin
+    BEng Software Engineering (Foundation Year)<br>
+    GISMA University - Berlin<br>
+    2nd Semester
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h1>Skills</h1>
+  <h2>Skills</h2>
   <div class="card">
     HTML • CSS • JavaScript (Learning)<br>
     Python (Basic)<br>
-    A+ Network • N+ Knowledge
+    A+ Network • N+
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h1>Projects</h1>
+  <h2>Projects</h2>
   <div class="card">
     Portfolio Website (Current Project)
   </div>
@@ -71,7 +78,7 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <h1>Contact</h1>
+  <h2>Contact</h2>
   <div class="card">
     Email: emranazizi1002@gmail.com<br>
     Instagram: coming soon<br>
@@ -82,7 +89,7 @@
 </main>
 
 <footer>
-  © 2026 Emran Azizi
+  © 2026 Emran Azizi | Cyber Developer
 </footer>
 
 <!-- MATRIX SCRIPT -->
@@ -97,21 +104,21 @@ let letters = "01";
 let fontSize = 14;
 let columns = canvas.width / fontSize;
 
-let drops = [];
-
-for (let i = 0; i < columns; i++) {
-  drops[i] = 1;
-}
+let drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
-  ctx.fillStyle = "rgba(5, 11, 20, 0.05)";
+  ctx.fillStyle = "rgba(5, 11, 20, 0.08)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#4da3ff";
+  const colors = ["#00ff9d", "#4da3ff"];
+
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
     let text = letters[Math.floor(Math.random() * letters.length)];
+
+    ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
     if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -122,7 +129,12 @@ function draw() {
   }
 }
 
-setInterval(draw, 50);
+setInterval(draw, 45);
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
 </script>
 
 </body>
