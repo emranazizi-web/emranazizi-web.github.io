@@ -1,10 +1,10 @@
 // ===== SCROLL REVEAL =====
-const elements = document.querySelectorAll(".reveal");
+const items = document.querySelectorAll(".reveal");
 
 function reveal() {
   const trigger = window.innerHeight * 0.85;
 
-  elements.forEach(el => {
+  items.forEach(el => {
     const top = el.getBoundingClientRect().top;
 
     if (top < trigger) {
@@ -17,7 +17,7 @@ window.addEventListener("scroll", reveal);
 reveal();
 
 
-// ===== MATRIX RAIN EFFECT =====
+// ===== MATRIX RAIN (010101010 BACKGROUND) =====
 const canvas = document.createElement("canvas");
 document.body.appendChild(canvas);
 
@@ -28,25 +28,21 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const letters = "010101010101";
+const chars = "010101010101010101";
 const fontSize = 14;
 const columns = canvas.width / fontSize;
 
-const drops = [];
-
-for (let i = 0; i < columns; i++) {
-  drops[i] = 1;
-}
+const drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
-  ctx.fillStyle = "rgba(7, 10, 18, 0.05)";
+  ctx.fillStyle = "rgba(255,255,255,0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.fillStyle = "#60a5fa";
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
+    const text = chars[Math.floor(Math.random() * chars.length)];
 
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
