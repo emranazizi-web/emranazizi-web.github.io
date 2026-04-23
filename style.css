@@ -142,3 +142,32 @@ nav a {
     transform: scale(1.05);
     box-shadow: 0 0 25px #00c3ff;
 }
+
+.skill {
+    margin: 10px 0;
+}
+
+.skill-name {
+    margin-bottom: 5px;
+    color: #00c3ff;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: #00c3ff;
+    width: 0;
+    animation: fillBar 2s forwards;
+}
+
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--level); }
+}
