@@ -9,62 +9,121 @@
 
 <body>
 
-<!-- SIDEBAR NAVIGATION -->
-<nav>
-  <h3 style="color:#4da3ff; text-align:center; margin-bottom:20px;">
-    EMRAN.AZIZI
-  </h3>
+<!-- MATRIX BACKGROUND -->
+<canvas id="matrix"></canvas>
 
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="education.html">Education</a>
-  <a href="skills.html">Skills</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
+<!-- SIDEBAR -->
+<nav>
+  <h3 class="logo">EMRAN.AZIZI</h3>
+
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<!-- MAIN CONTENT -->
 <main>
 
+<!-- HOME -->
+<section id="home">
   <h1>Hi, I'm Emran Azizi 👨‍💻</h1>
-
-  <p>
+  <div class="card">
     Software Engineering Student | Aspiring Full-Stack Developer
-  </p>
-
-  <div class="card">
-    <h2>Welcome to my portfolio</h2>
-    <p>
-      I am a software engineering student from Afghanistan, currently studying in Germany.
-      I focus on building strong foundations in computer science and web development.
-    </p>
   </div>
+</section>
 
+<!-- ABOUT -->
+<section id="about">
+  <h1>About Me</h1>
   <div class="card">
-    <h2>Quick Overview</h2>
-    <ul>
-      <li>🎓 Software Engineering Student (2nd Semester)</li>
-      <li>💻 Learning Full-Stack Development</li>
-      <li>🌐 A+ Network Certified</li>
-      <li>📚 Foundation Course Completed</li>
-    </ul>
+    I am a software engineering student from Afghanistan studying in Germany at GISMA University.
   </div>
+</section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <h1>Education</h1>
   <div class="card">
-    <h2>Career Goal</h2>
-    <p>
-      My goal is to become a professional full-stack developer and software engineer,
-      and later achieve a PhD in software engineering.
-    </p>
-
-    <button>Download CV (Coming Soon)</button>
+    BEng Software Engineering (Foundation Year) - 2nd Semester<br>
+    GISMA University, Berlin
   </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h1>Skills</h1>
+  <div class="card">
+    HTML • CSS • JavaScript (Learning)<br>
+    Python (Basic)<br>
+    A+ Network • N+ Knowledge
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h1>Projects</h1>
+  <div class="card">
+    Portfolio Website (Current Project)
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h1>Contact</h1>
+  <div class="card">
+    Email: emranazizi1002@gmail.com<br>
+    Instagram: coming soon<br>
+    LinkedIn: coming soon
+  </div>
+</section>
 
 </main>
 
 <footer>
-  © 2026 Emran Azizi | Software Engineering Portfolio
+  © 2026 Emran Azizi
 </footer>
+
+<!-- MATRIX SCRIPT -->
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let letters = "01";
+let fontSize = 14;
+let columns = canvas.width / fontSize;
+
+let drops = [];
+
+for (let i = 0; i < columns; i++) {
+  drops[i] = 1;
+}
+
+function draw() {
+  ctx.fillStyle = "rgba(5, 11, 20, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#4da3ff";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    let text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+
+    drops[i]++;
+  }
+}
+
+setInterval(draw, 50);
+</script>
 
 </body>
 </html>
