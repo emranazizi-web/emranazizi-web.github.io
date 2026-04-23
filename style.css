@@ -1,48 +1,46 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
 }
 
 body {
   background: #050b14;
   color: #e6f1ff;
-  line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* ===== MATRIX BACKGROUND (LIGHT STYLE) ===== */
-body::before {
-  content: "";
+/* MATRIX CANVAS */
+#matrix {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://i.imgur.com/3ZQ3ZQF.png'); /* subtle pattern */
-  opacity: 0.05;
   z-index: -1;
 }
 
-/* ===== NAVBAR (LEFT SIDEBAR STYLE) ===== */
+/* SIDEBAR */
 nav {
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
   width: 220px;
+  height: 100%;
   background: rgba(10, 20, 40, 0.9);
-  border-right: 1px solid #1f3b57;
   padding-top: 30px;
+  border-right: 1px solid #1f3b57;
+}
+
+.logo {
+  text-align: center;
+  color: #4da3ff;
+  margin-bottom: 20px;
 }
 
 nav a {
   display: block;
-  color: #e6f1ff;
+  padding: 15px;
+  color: white;
   text-decoration: none;
-  padding: 15px 20px;
   transition: 0.3s;
 }
 
@@ -51,23 +49,18 @@ nav a:hover {
   color: #4da3ff;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* MAIN */
 main {
   margin-left: 240px;
   padding: 30px;
 }
 
-/* ===== HEADINGS ===== */
-h1, h2, h3 {
-  color: #ffffff;
-}
-
 h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+  color: white;
+  margin-bottom: 15px;
 }
 
-/* ===== CARDS ===== */
+/* CARD */
 .card {
   background: rgba(77, 163, 255, 0.05);
   border: 1px solid #1f3b57;
@@ -76,40 +69,11 @@ h1 {
   border-radius: 10px;
 }
 
-/* ===== BUTTONS ===== */
-button, .btn {
-  background: #4da3ff;
-  color: #000;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover, .btn:hover {
-  background: #82c4ff;
-}
-
-/* ===== SKILL BAR ===== */
-.bar {
-  background: #0b1a2b;
-  border: 1px solid #1f3b57;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  background: linear-gradient(90deg, #4da3ff, #ffffff);
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
   border-top: 1px solid #1f3b57;
+  margin-top: 40px;
   color: #9fb3c8;
 }
