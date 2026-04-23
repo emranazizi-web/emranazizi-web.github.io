@@ -69,3 +69,29 @@ section {
 h1 {
     color: #00c3ff;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to sections */
+section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Smooth hover effect for links */
+nav a {
+    transition: 0.3s;
+}
+
+/* Better card animation */
+.card {
+    animation: fadeIn 1s ease-in-out;
+}
