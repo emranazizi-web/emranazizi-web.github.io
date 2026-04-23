@@ -6,7 +6,7 @@
 
 <title>Emran Azizi | Cyber Portfolio</title>
 
-<!-- GOOGLE FONT (MODERN + SMART) -->
+<!-- SMART FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
@@ -35,7 +35,7 @@
 <section id="home">
   <h1>Hi, I'm Emran Azizi 👨‍💻</h1>
   <div class="card">
-    Software Engineering Student | Future Full Stack Developer
+    <span id="typing"></span>
   </div>
 </section>
 
@@ -43,8 +43,7 @@
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
-    I am a software engineering student from Afghanistan studying in Germany.
-    Passionate about web development, cyber systems, and modern software engineering.
+    Software Engineering student from Afghanistan studying in Germany. Passionate about full-stack development, cybersecurity, and modern web systems.
   </div>
 </section>
 
@@ -53,7 +52,7 @@
   <h2>Education</h2>
   <div class="card">
     BEng Software Engineering (Foundation Year)<br>
-    GISMA University - Berlin<br>
+    GISMA University – Berlin<br>
     2nd Semester
   </div>
 </section>
@@ -72,7 +71,7 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="card">
-    Portfolio Website (Current Project)
+    Cyber Portfolio Website (Current Project)
   </div>
 </section>
 
@@ -92,7 +91,7 @@
   © 2026 Emran Azizi | Cyber Developer
 </footer>
 
-<!-- MATRIX SCRIPT -->
+<!-- MATRIX SCRIPT (FIXED VERSION) -->
 <script>
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -100,33 +99,37 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let letters = "01";
 let fontSize = 14;
 let columns = canvas.width / fontSize;
-
 let drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
-  ctx.fillStyle = "rgba(5, 11, 20, 0.08)";
+  // DARKER FADE (IMPORTANT FIX FOR READABILITY)
+  ctx.fillStyle = "rgba(4, 8, 18, 0.15)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const colors = ["#00ff9d", "#4da3ff"];
+  const colors = ["#00ff9d", "#2f7fff"];
 
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
-    let text = letters[Math.floor(Math.random() * letters.length)];
+
+    const text = Math.random() > 0.5 ? "0" : "1";
+
+    ctx.globalAlpha = 0.6; // FIX: less brightness
 
     ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
 
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.98) {
       drops[i] = 0;
     }
 
     drops[i]++;
   }
+
+  ctx.globalAlpha = 1;
 }
 
 setInterval(draw, 45);
@@ -135,6 +138,22 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+</script>
+
+<!-- TYPING EFFECT -->
+<script>
+const text = "Software Engineering Student | Future Full Stack Developer | Cyber Enthusiast";
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 50);
+  }
+}
+
+type();
 </script>
 
 </body>
