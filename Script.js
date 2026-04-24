@@ -87,3 +87,28 @@ function closeImg() {
         box.style.display = "none";
     }
 }
+
+fetch("projects.json")
+    .then(res => res.json())
+    .then(data => {
+
+        const container = document.getElementById("projects-container");
+
+        if (!container) return;
+
+        data.forEach(project => {
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <small><b>Tech:</b> ${project.tech}</small>
+            `;
+
+            container.appendChild(card);
+        });
+
+    })
+    .catch(err => console.log("Error loading projects:", err));
