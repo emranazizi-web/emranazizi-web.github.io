@@ -240,3 +240,20 @@ nav a {
     transform: scale(1.05);
 }
 
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 120px 20px;
+    text-align: left;
+}
+
+.hero-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #00c3ff;
+    object-fit: cover;
+}
+
