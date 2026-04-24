@@ -17,19 +17,25 @@
 </nav>
 
 <section class="reveal">
-    <h1>My Gallery</h1>
-</section>
-
-<section class="reveal">
-    <div class="gallery">
-
-        <img src="img1.jpg">
-        <img src="img2.jpg">
-        <img src="img3.jpg">
-        <img src="img4.jpg">
-
+    <div class="card">
+        <h1>My Gallery</h1>
+        <p>Click images to view in full size</p>
     </div>
 </section>
+
+<section class="gallery reveal">
+
+    <img src="img1.jpg" onclick="openImg(this)">
+    <img src="img1.jpg" onclick="openImg(this)">
+    <img src="img1.jpg" onclick="openImg(this)">
+    <img src="img1.jpg" onclick="openImg(this)">
+
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImg()">
+    <img id="lightbox-img">
+</div>
 
 <script src="script.js"></script>
 
