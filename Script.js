@@ -1,18 +1,8 @@
+// =========================
+// CURSOR EFFECT
+// =========================
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =========================
-    // FADE IN EFFECT
-    // =========================
-    document.body.style.opacity = 0;
-    document.body.style.transition = "1s ease";
-
-    setTimeout(() => {
-        document.body.style.opacity = 1;
-    }, 100);
-
-    // =========================
-    // CURSOR EFFECT
-    // =========================
     const cursor = document.createElement("div");
     cursor.classList.add("cursor");
     document.body.appendChild(cursor);
@@ -45,15 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
 
     // =========================
-    // REVEAL ON SCROLL (FIXED)
+    // REVEAL ON SCROLL
     // =========================
     const reveals = document.querySelectorAll(".reveal");
 
     function revealOnScroll() {
-        reveals.forEach(el => {
-            const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
 
-            if (top < window.innerHeight - 120) {
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 120) {
                 el.classList.add("active");
             }
         });
@@ -62,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
 
-    // run once immediately
     revealOnScroll();
 });
 
@@ -88,12 +79,15 @@ function closeImg() {
     }
 }
 
+
+// =========================
+// LOAD PROJECTS FROM JSON
+// =========================
 fetch("projects.json")
     .then(res => res.json())
     .then(data => {
 
         const container = document.getElementById("projects-container");
-
         if (!container) return;
 
         data.forEach(project => {
@@ -111,4 +105,4 @@ fetch("projects.json")
         });
 
     })
-    .catch(err => console.log("Error loading projects:", err));
+    .catch(err => console.log("Projects load error:", err));
