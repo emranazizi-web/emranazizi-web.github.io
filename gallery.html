@@ -8,6 +8,7 @@
 
 <body>
 
+<!-- NAV -->
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -16,6 +17,7 @@
     <a href="contact.html">Contact</a>
 </nav>
 
+<!-- TITLE -->
 <section class="reveal">
     <div class="card">
         <h1>My Gallery</h1>
@@ -23,6 +25,7 @@
     </div>
 </section>
 
+<!-- IMAGES -->
 <section class="gallery reveal">
 
     <img src="img1.jpg" onclick="openImg(this)">
@@ -32,16 +35,13 @@
 
 </section>
 
-<!-- LIGHTBOX -->
+<!-- LIGHTBOX (ONLY ONCE) -->
 <div id="lightbox" onclick="closeImg()">
     <img id="lightbox-img">
 </div>
 
+<!-- SCRIPT -->
 <script src="script.js"></script>
 
 </body>
 </html>
-
-<div id="lightbox" onclick="closeImg()">
-    <img id="lightbox-img">
-</div>
