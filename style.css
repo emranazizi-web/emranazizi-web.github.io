@@ -295,3 +295,24 @@ section + section {
         width: var(--level);
     }
 }
+
+.project-card {
+    overflow: hidden;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    color: #00c3ff;
+}
