@@ -1,8 +1,15 @@
-const canvas = document.getElementById("bg");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (canvas) {
+    const canvas = document.getElementById("bg");
+
+    if (!canvas) {
+        console.warn("⚠️ Canvas #bg not found");
+        return;
+    }
+
     const ctx = canvas.getContext("2d");
 
+    // ===== RESIZE FIX =====
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -11,17 +18,24 @@ if (canvas) {
     resize();
     window.addEventListener("resize", resize);
 
+    // ===== PARTICLES =====
     let particles = [];
 
-    for (let i = 0; i < 80; i++) {
-        particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            dx: (Math.random() - 0.5) * 1,
-            dy: (Math.random() - 0.5) * 1
-        });
+    function createParticles() {
+        particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                dx: (Math.random() - 0.5) * 1,
+                dy: (Math.random() - 0.5) * 1
+            });
+        }
     }
 
+    createParticles();
+
+    // ===== DRAW LINE =====
     function drawLine(p1, p2) {
         ctx.beginPath();
         ctx.moveTo(p1.x, p1.y);
@@ -30,13 +44,17 @@ if (canvas) {
         ctx.stroke();
     }
 
+    // ===== ANIMATION LOOP =====
     function animate() {
+
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         particles.forEach(p => {
+
             p.x += p.dx;
             p.y += p.dy;
 
+            // bounce edges
             if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
             if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
 
@@ -46,8 +64,10 @@ if (canvas) {
             ctx.fill();
         });
 
+        // connections
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
+
                 let dx = particles[i].x - particles[j].x;
                 let dy = particles[i].y - particles[j].y;
                 let dist = Math.sqrt(dx * dx + dy * dy);
@@ -62,4 +82,5 @@ if (canvas) {
     }
 
     animate();
-}
+
+});
