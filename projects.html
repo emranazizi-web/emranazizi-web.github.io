@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Projects</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,31 +28,33 @@
     </div>
 </section>
 
-<!-- PROJECTS GRID -->
-<section id="projects-container">
+<!-- PROJECTS GRID (FIXED CONTAINER) -->
+<section id="projects-container" class="reveal">
+
+    <!-- STATIC PROJECTS (fallback if JS fails) -->
 
     <div class="card project-card">
-        <img src="img1.jpg" alt="Project 1">
+        <img src="img1.jpg" alt="Project 1" style="width:100%; border-radius:10px;">
         <h3>Portfolio Website</h3>
         <p>My personal developer portfolio built with HTML, CSS, JS.</p>
     </div>
 
     <div class="card project-card">
-        <img src="img1.jpg" alt="Project 2">
+        <img src="img1.jpg" alt="Project 2" style="width:100%; border-radius:10px;">
         <h3>Calculator App</h3>
         <p>Simple calculator using JavaScript logic.</p>
     </div>
 
     <div class="card project-card">
-        <img src="img1.jpg" alt="Project 3">
+        <img src="img1.jpg" alt="Project 3" style="width:100%; border-radius:10px;">
         <h3>School Management Idea</h3>
         <p>Concept system for managing students and grades.</p>
     </div>
 
 </section>
 
-<!-- SCRIPT -->
-<script src="script.js"></script>
+<!-- SCRIPT (SAFE LOAD) -->
+<script src="script.js" defer></script>
 
 </body>
 </html>
