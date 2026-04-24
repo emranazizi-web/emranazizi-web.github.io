@@ -8,6 +8,7 @@
 
 <body>
 
+<!-- NAV -->
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -16,6 +17,7 @@
     <a href="contact.html">Contact</a>
 </nav>
 
+<!-- TITLE -->
 <section class="reveal">
     <div class="card">
         <h1>Contact Me</h1>
@@ -23,16 +25,20 @@
     </div>
 </section>
 
+<!-- FORM -->
 <section class="reveal">
     <div class="card">
 
         <form>
 
-            <input type="text" placeholder="Your Name" class="input"><br><br>
+            <input type="text" placeholder="Your Name" class="input" required>
+            <br><br>
 
-            <input type="email" placeholder="Your Email" class="input"><br><br>
+            <input type="email" placeholder="Your Email" class="input" required>
+            <br><br>
 
-            <textarea placeholder="Your Message" class="input" rows="6"></textarea><br><br>
+            <textarea placeholder="Your Message" class="input" rows="6" required></textarea>
+            <br><br>
 
             <button class="btn" type="submit">Send Message</button>
 
@@ -40,6 +46,9 @@
 
     </div>
 </section>
+
+<!-- SCRIPT (IMPORTANT for reveal animation) -->
+<script src="script.js"></script>
 
 </body>
 </html>
