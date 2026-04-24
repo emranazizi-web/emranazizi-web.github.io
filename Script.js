@@ -75,3 +75,9 @@ function closeImg() {
         box.style.display = "none";
     }
 }
+
+window.addEventListener("load", () => {
+    document.querySelectorAll(".reveal").forEach(el => {
+        el.classList.add("active");
+    });
+});
