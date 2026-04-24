@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Fade-in effect
+    // =========================
+    // FADE IN EFFECT
+    // =========================
     document.body.style.opacity = 0;
     document.body.style.transition = "1s ease";
 
@@ -8,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.opacity = 1;
     }, 100);
 
-    // Cursor effect
+    // =========================
+    // CURSOR EFFECT
+    // =========================
     const cursor = document.createElement("div");
     cursor.classList.add("cursor");
     document.body.appendChild(cursor);
@@ -18,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         cursor.style.top = e.pageY + "px";
     });
 
-    // Typing effect
+    // =========================
+    // TYPING EFFECT
+    // =========================
     const text = "Software Engineering Student | Future Full Stack Developer | Problem Solver";
     let i = 0;
 
@@ -38,16 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeEffect();
 
-    // Reveal animation (ONLY ONE SYSTEM - FIXED)
+    // =========================
+    // REVEAL ON SCROLL (FIXED)
+    // =========================
     const reveals = document.querySelectorAll(".reveal");
 
     function revealOnScroll() {
-        const windowHeight = window.innerHeight;
-
         reveals.forEach(el => {
-            const elementTop = el.getBoundingClientRect().top;
+            const top = el.getBoundingClientRect().top;
 
-            if (elementTop < windowHeight - 120) {
+            if (top < window.innerHeight - 120) {
                 el.classList.add("active");
             }
         });
@@ -56,9 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
 
+    // run once immediately
+    revealOnScroll();
 });
 
-// Lightbox (FIXED - NO DUPLICATES)
+
+// =========================
+// LIGHTBOX
+// =========================
 function openImg(img) {
     const box = document.getElementById("lightbox");
     const boxImg = document.getElementById("lightbox-img");
@@ -71,13 +82,8 @@ function openImg(img) {
 
 function closeImg() {
     const box = document.getElementById("lightbox");
+
     if (box) {
         box.style.display = "none";
     }
 }
-
-window.addEventListener("load", () => {
-    document.querySelectorAll(".reveal").forEach(el => {
-        el.classList.add("active");
-    });
-});
