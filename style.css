@@ -1,20 +1,17 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0f1c;
-    color: #e6e6e6;
+    font-family: Arial;
+    background: #0b0f1a;
+    color: white;
 }
 
 /* NAV */
 nav {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     padding: 15px;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
+    background: black;
 }
 
 nav a {
@@ -31,18 +28,26 @@ nav a:hover {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 120px 20px;
+    padding: 100px;
 }
 
 .hero h1 {
     font-size: 55px;
     color: #00c3ff;
-    text-shadow: 0 0 12px rgba(0,195,255,0.5);
+    text-shadow: 0 0 10px #00c3ff;
 }
 
 .hero p {
     font-size: 18px;
     color: #bdbdbd;
+}
+
+/* HERO FLEX */
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 
 /* PROFILE IMAGE */
@@ -54,38 +59,26 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* FLEX HERO */
-.hero-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
 /* CARD */
 .card {
-    background: rgba(255,255,255,0.04);
-    padding: 25px;
-    margin: 20px auto;
-    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 20px;
     border-left: 4px solid #00c3ff;
-    max-width: 800px;
     transition: 0.3s;
-    backdrop-filter: blur(8px);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(0,195,255,0.25);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #00c3ff;
 }
 
 /* SECTIONS */
 section {
     padding: 60px;
-    animation: fadeIn 1s ease-in-out;
 }
 
-/* ANIMATION */
+/* FADE ANIMATION */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -95,6 +88,10 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+section {
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* SKILLS */
