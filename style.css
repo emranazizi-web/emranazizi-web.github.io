@@ -331,3 +331,12 @@ section + section {
 html {
     scroll-behavior: smooth;
 }
+
+textarea {
+    resize: none;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+}
