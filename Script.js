@@ -34,3 +34,19 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+const text = "Software Engineering Student | Future Full Stack Developer | Problem Solver";
+let i = 0;
+
+function typeEffect() {
+    document.querySelector(".typing").innerHTML = text.slice(0, i);
+    i++;
+
+    if (i > text.length) {
+        i = 0;
+    }
+
+    setTimeout(typeEffect, 100);
+}
+
+typeEffect();
