@@ -246,3 +246,18 @@ body {
 section + section {
     margin-top: 10px;
 }
+
+.typing {
+    font-size: 18px;
+    color: #bdbdbd;
+    min-height: 25px;
+    border-right: 2px solid #00c3ff;
+    width: fit-content;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
